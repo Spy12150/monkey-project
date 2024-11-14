@@ -1,0 +1,218 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Georgia', serif;
+    line-height: 1.6;
+    color: #fff;
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    overscroll-behavior: none;
+}
+
+.background {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    width: 50%;
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    z-index: -1;
+    background-position-y: calc(100% * var(--scroll-factor));
+    mask-image: linear-gradient(to right, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.75) 50%, rgba(0, 0, 0, 0.25) 100%);
+    -webkit-mask-image: linear-gradient(to right, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.75) 50%, rgba(0, 0, 0, 0.25) 100%);
+}
+
+.background.left {
+    left: 0;
+    background-image: url('left_half.png');
+    background-position: left top;
+    mask-image: linear-gradient(to right, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 1) 50%, rgba(0, 0, 0, 0.25) 100%);
+    -webkit-mask-image: linear-gradient(to right, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.75) 50%, rgba(0, 0, 0, 0.25) 100%);
+}
+
+.background.right {
+    right: 0;
+    background-image: url('right_half.png');
+    background-position: right top;
+    mask-image: linear-gradient(to left, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.75) 50%, rgba(0, 0, 0, 0.25) 100%);
+    -webkit-mask-image: linear-gradient(to left, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.75) 50%, rgba(0, 0, 0, 0.25) 100%);
+}
+
+html, body {
+    scroll-behavior: smooth;
+}
+
+.content {
+    width: 80%;
+    max-width: 900px;
+    height: auto;
+}
+
+header {
+    text-align: center;
+    padding: 20px;
+    background-color: rgba(139, 0, 0, 1);
+    border-radius: 8px;
+    margin-top: 20px;
+    width: 80%;
+    max-width: 900px;
+}
+
+header h1 {
+    font-size: 2.5em;
+    color: #FFA07A;
+    margin-bottom: 10px;
+}
+
+header p {
+    font-size: 1.2em;
+    color: #FFD700;
+}
+
+.exhibition {
+    width: 80%;
+    max-width: 900px;
+    padding: 30px;
+    background-color: #F5ECCE;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
+    margin: 20px 0;
+    flex-grow: 1;
+    position: relative;
+    overflow: hidden;
+}
+
+.exhibition:after {
+    content: '';
+    position: absolute;
+    top: 7.5px;
+    left: 7.5px;
+    right: 7.5px;
+    bottom: 7.5px;
+    border-radius: 14px;
+    pointer-events: none;
+    border: 7px solid rgb(238, 204, 12);
+    border-style: dashed;
+}
+
+.exhibition .section:last-child {
+    margin-bottom: 0;
+}
+
+.section {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: #F3E2A9;
+    margin-bottom: 20px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.section:nth-child(even) {
+    flex-direction: row-reverse;
+}
+
+.image-placeholder {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 75%;
+    max-width: 300px;
+    height: auto;
+    border-radius: 10px;
+    overflow: hidden;
+    margin: 0 20px;
+}
+
+.image-citation {
+    font-size: 0.8em;
+    color: #555;
+    text-align: center;
+    margin-top: 5px;
+}
+
+.flipped-image {
+    transform: rotate(-90deg);
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+.regular-image {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+.content {
+    flex-grow: 1;
+    padding-left: 20px;
+    padding-right: 20px;
+    color: #000;
+}
+
+.quote {
+    width: 40%;
+    max-width: 250px;
+    margin: 0 20px;
+    font-size: 1.2em;
+    font-style: italic;
+    color: rgb(237, 93, 16);
+    text-align: center;
+    border-left: 5px solid rgb(237, 93, 16);
+    padding-left: 10px;
+}
+
+.content {
+    width: 60%;
+    color: #000;
+}
+
+.content h2 {
+    color: #8B0000;
+    font-size: 1.8em;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: rgba(139, 0, 0, 0.9);
+    color: #FFD700;
+    width: 100%;
+    position: relative;
+    bottom: 0;
+    margin-top: 20px;
+}
+
+.works-cited {
+    list-style-type: none;
+    padding: 0;
+    font-size: 1em;
+    line-height: 1.6;
+}
+
+.works-cited li {
+    margin-bottom: 10px;
+}
+
+.works-cited a {
+    color: #8B0000;
+    text-decoration: none;
+}
+
+.works-cited a:hover {
+    text-decoration: underline;
+}
